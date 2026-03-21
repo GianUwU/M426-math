@@ -4,7 +4,11 @@ export class Fraction {
   constructor(
     private numerator: number,
     private denominator: number,
-  ) {}
+  ) {
+    if (denominator === 0) {
+      throw new Error("denominator cannot be 0");
+    }
+  }
 
   public add(other: Fraction) {
     const newNumerator =
